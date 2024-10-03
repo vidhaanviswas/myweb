@@ -1,13 +1,13 @@
 <h1 align="center">
   <br>
-  <a href="http://gregsithole.com">
+  <a href="https://vidhaanviswas.netlify.app/">
   <img src="./src/assets/light-logo.svg" alt="GregSithole" width="200"></a>
   <br>
-  Greg Sithole's Personal Website
+  My Personal Website
   <br>
 </h1>
 
-<h4 align="center">A simple personal website about <a href="http://gregsithole.com" target="_blank">Greg Sithole</a>.</h4>
+<h4 align="center">A simple personal website about <a href="https://vidhaanviswas.netlify.app/" target="_blank">Vidhaan Viswas</a>.</h4>
 
 <br>
 
