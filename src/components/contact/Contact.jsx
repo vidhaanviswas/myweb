@@ -37,12 +37,12 @@ const Contact = (props) => {
             .then(
                 (result) => {
                     setLoading(false);
-                    toast.success(`Successfully sent email.`);
+                    toast.success(`Successfully sent message 😎.`);
                 },
                 (error) => {
                     setLoading(false);
                     console.error("Error sending email:", error);
-                    toast.error("Failed to send email. Please try again later.");
+                    toast.error("Failed to send your message 🥺. Please enter correct information or try again later.");
                 }
             );
     };
@@ -55,7 +55,7 @@ const Contact = (props) => {
                 <div className="contact__info">
                     <h3 className="contact__title">Let's talk about everything!</h3>
                     <p className="contact__details">
-                        Don't like forms? Send me an email. 👋
+                        Don't like forms? Send me a message. 👋
                     </p>
                 </div>
 
