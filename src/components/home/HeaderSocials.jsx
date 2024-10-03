@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedinIn, FaTwitter} from 'react-icons/fa';
 const HeaderSocials = () => {
     return (
         <div className='home__socials'>
-            <a href='https://vidhaanviswas.netlify.app/' className='home__social-link' target='_blank' rel='noreferrer'>
+            <a href='https://github.com/vidhaanviswas' className='home__social-link' target='_blank' rel='noreferrer'>
                 <FaGithub />
             </a>
 
