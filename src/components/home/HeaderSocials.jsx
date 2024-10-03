@@ -17,7 +17,7 @@ const HeaderSocials = () => {
                 <FaDev />
             </a> */}
 
-            <a href='https://vidhaanviswas.netlify.app/' className='home__social-link' target='_blank' rel='noreferrer'>
+            <a href='https://www.linkedin.com/in/vidhaan-viswas' className='home__social-link' target='_blank' rel='noreferrer'>
                 <FaLinkedinIn />
             </a>
 
@@ -25,7 +25,7 @@ const HeaderSocials = () => {
                 <FaFacebookF />
             </a> */}
 
-            <a href='https://vidhaanviswas.netlify.app/' className='home__social-link' target='__blank' rel='noreferrer'>
+            <a href='https://x.com/VidhaanViswas' className='home__social-link' target='__blank' rel='noreferrer'>
                 <FaTwitter />
             </a>
         </div>
