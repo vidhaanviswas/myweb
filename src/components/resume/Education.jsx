@@ -28,6 +28,7 @@ const Education = [
         yearsActive: "December 2023 - Present",
         information: [
             "Currently pursuing a Bachelor's in Computer Science, 5th semester.",
+            "CGPA: - 7.24",
             "Exploring advanced topics in Applied Cryptography, Computer Network Security, and software development",
             // "Involved in final year projects related to unsupervised learning for anomaly detection."
         ],
