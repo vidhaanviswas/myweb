@@ -17,7 +17,7 @@ const AboutBox = () => {
                 <RiCupLine className='about__icon' />
 
                 <div>
-                    <h3 className="about__title">5</h3>
+                    <h3 className="about__title">14</h3>
                     <span className="about__subtitle">Github Repositories</span>
                 </div>
             </div>
@@ -35,7 +35,7 @@ const AboutBox = () => {
                 <RiTrophyLine className='about__icon' />
 
                 <div>
-                    <h3 className="about__title">1</h3>
+                    <h3 className="about__title">2</h3>
                     <span className="about__subtitle">Achievements</span>
                 </div>
             </div>
