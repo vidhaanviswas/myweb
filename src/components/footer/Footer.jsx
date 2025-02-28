@@ -4,34 +4,37 @@ import './Footer.css';
 import PopupCard from '../popupcard/PopupCard';
 
 const Footer = () => {
-    const [isPopupOpen, setIsPopupOpen] = useState(false); // State to control popup visibility
-    const popupRef = useRef(null); // Ref to hold the popup element
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const popupRef = useRef(null);
+    const [visitorCount, setVisitorCount] = useState(0); // Visitor Counter State
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleCreditClick = () => {
-        setIsPopupOpen(true); // Open the popup when credit text is clicked
+        setIsPopupOpen(true);
     };
 
     const closePopup = () => {
-        setIsPopupOpen(false); // Close the popup
+        setIsPopupOpen(false);
     };
 
-    // Effect to handle clicks outside of the PopupCard
+    // Fetch visitor count from Netlify function
+    useEffect(() => {
+        fetch("/.netlify/functions/visitorCounter")
+            .then(response => response.json())
+            .then(data => setVisitorCount(data.count))
+            .catch(error => console.error("Error fetching visitor count:", error));
+    }, []);
+
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // Check if the clicked target is outside the popup
             if (popupRef.current && !popupRef.current.contains(event.target)) {
                 closePopup();
             }
         };
-
-        // Add event listener for clicks
         document.addEventListener('mousedown', handleClickOutside);
-        
-        // Cleanup the event listener on component unmount
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -45,6 +48,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-center">
                     <p>&copy; 2024 Vidhaan Viswas. All Rights Reserved.</p>
+                    <p className="visitor-counter">👀 Visitors: {visitorCount}</p> {/* Display Visitor Counter */}
                 </div>
                 <div className="footer-right">
                     <div className="tooltip">
@@ -58,7 +62,7 @@ const Footer = () => {
             </div>
             {isPopupOpen && (
                 <div ref={popupRef}>
-                    <PopupCard onClose={closePopup} /> {/* Render PopupCard if open */}
+                    <PopupCard onClose={closePopup} />
                 </div>
             )}
         </footer>
