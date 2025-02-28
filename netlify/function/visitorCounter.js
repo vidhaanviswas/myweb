@@ -1,31 +1,24 @@
-const fs = require("fs");
-const path = require("path");
-
-const filePath = path.join(__dirname, "visitorCount.json"); // JSON file to store count
+const fetch = require("node-fetch");
 
 exports.handler = async () => {
-    let count = 250; // Default starting count
-
     try {
-        // Read the current visitor count from file
-        if (fs.existsSync(filePath)) {
-            const data = fs.readFileSync(filePath, "utf8");
-            const json = JSON.parse(data);
-            count = json.count + 1; // Increment visitor count
+        const response = await fetch("https://api.countapi.xyz/hit/vidhaanviswas.netlify.app//visits");
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        
-        // Save updated visitor count back to file
-        fs.writeFileSync(filePath, JSON.stringify({ count }), "utf8");
+
+        const data = await response.json();
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ count }),
+            body: JSON.stringify({ count: data.value }),
         };
     } catch (error) {
-        console.error("Error updating visitor count:", error);
+        console.error("Error fetching visitor count:", error.message);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Internal Server Error" }),
+            body: JSON.stringify({ error: "Failed to fetch visitor count" }),
         };
     }
 };
