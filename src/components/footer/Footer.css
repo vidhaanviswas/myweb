@@ -87,6 +87,13 @@
   background-color: #cccccc;
 }
 
+.visitor-counter {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 5px;
+}
+
 /* Add bounce animation for emoji */
 @keyframes bounce {
   0%, 100% {
